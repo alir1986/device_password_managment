@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="Device Password" id="menu_pasw_root"/>
+    
+    <menuitem name="Password list"
+              id="menu_list"
+              parent="menu_pasw_root"
+              sequence="20"/>
+</odoo>

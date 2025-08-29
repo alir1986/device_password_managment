@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Device Password Management</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #3C3C3C;
+        background-color: #F9F9F9;
+    }
+
+    :root {
+        --odoo-primary: #875A7B;
+        --odoo-accent: #F2F2F2;
+        --odoo-dark-text: #3C3C3C;
+        --odoo-link: #613DC1;
+    }
+
+    .banner {
+        background-color: var(--odoo-primary);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+    }
+    .banner h1 {
+        margin: 0;
+        font-size: 42px;
+    }
+    .banner p {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: -40px auto 40px;
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        color: var(--odoo-primary);
+        border-bottom: 2px solid var(--odoo-primary);
+        padding-bottom: 6px;
+        margin-top: 30px;
+    }
+
+    ul {
+        margin-left: 20px;
+        list-style-type: disc;
+    }
+
+    li {
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    li span.tooltip {
+        visibility: hidden;
+        width: 260px;
+        background-color: var(--odoo-primary);
+        color: #fff;
+        text-align: left;
+        padding: 8px;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 120%;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 13px;
+    }
+
+    li:hover span.tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    a {
+        color: var(--odoo-link);
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .badge {
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    .screenshots {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .screenshots img {
+        max-width: 100%;
+        border-radius: 6px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        flex: 1 1 calc(50% - 15px);
+    }
+
+    .footer {
+        margin-top: 50px;
+        font-size: 14px;
+        color: #777;
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+        text-align: center;
+    }
+
+
+
+    .screenshots {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .screenshot-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    
+    .screenshot-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    
+    .screenshot-card p {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+
+<div class="banner">
+    <h1>Device Password Management</h1>
+    <p>Securely manage customer devices and control credential access in tasks</p>
+    <img class="badge" src="https://img.shields.io/badge/license-LGPL--3-blue.svg" alt="License: LGPL-3">
+</div>
+
+<div class="container">
+    <h2>Overview</h2>
+    <p>
+        The <strong>Device Password Management</strong> module is built for service companies to 
+        efficiently store and manage customer device details. It allows you to register IP addresses, 
+        device names, usernames, and passwords in one place. When tasks are created, only authorized 
+        users get access to the credentials, ensuring security and smooth operations for support teams.
+    </p>
+
+    <h2>Key Features</h2>
+    <ul>
+        <li>
+            📌 Centralized device information storage
+            <span class="tooltip">
+                Save customer device details like name, IP address, username, and password securely.
+            </span>
+        </li>
+        <li>
+            📌 Task-based credential access
+            <span class="tooltip">
+                Automatically control which users can see device credentials when a task is assigned.
+            </span>
+        </li>
+        <li>
+            📌 Enhanced data security
+            <span class="tooltip">
+                Prevent unauthorized access to sensitive device data and ensure traceability.
+            </span>
+        </li>
+        <li>
+            📌 Integrated with Odoo workflow
+            <span class="tooltip">
+                Works seamlessly with Odoo’s project and task system without extra configuration.
+            </span>
+        </li>
+    </ul>
+
+    <h2>Benefits</h2>
+    <ul>
+        <li>🔒 Improve data security by restricting password visibility</li>
+        <li>📂 Organize customer devices and credentials in one system</li>
+        <li>🚀 Streamline service operations and reduce errors</li>
+        <li>👨‍💻 Boost technician productivity with quick credential access</li>
+    </ul>
+
+    <h2>Installation</h2>
+    <ul>
+        <li>Place this module folder into your Odoo addons directory.</li>
+        <li>Update the apps list in Odoo and search for "Device Password Management".</li>
+        <li>Click 'Install' to activate the module and start using its features.</li>
+    </ul>
+
+    <h2>Screenshots</h2>
+    <div class="screenshots">
+        <div class="screenshot-card">
+            <img src="assets/screenshots/Screenshot1.jpg" alt="Device Password Management Screenshot 1">
+            <p>Create Device List</p>
+        </div>
+    <br>
+        <div class="screenshot-card">
+            <img src="assets/screenshots/Screenshot2.jpg" alt="Device Password Management Screenshot 2">
+            <p>Create Password List for customer</p>
+        </div>
+    <br>
+        <div class="screenshot-card">
+            <img src="assets/screenshots/Screenshot3.jpg" alt="Device Password Management Screenshot 3">
+            <p>Device Full list</p>
+        </div>
+    <br>
+        <div class="screenshot-card">
+            <img src="assets/screenshots/Screenshot4.jpg" alt="Device Password Management Screenshot 4">
+            <p>Allow access to view the password - this option is only available if the Task is OPEN, the Customer has at least one password in the list, and the User has permission to view passwords.</p>
+        </div>
+    <br>
+        <div class="screenshot-card">
+            <img src="assets/screenshots/Screenshot5.jpg" alt="Device Password Management Screenshot 4">
+            <p>List of Customer password with Filter access</p>
+        </div>
+    <br>
+        <div class="screenshot-card">
+            <img src="assets/screenshots/Screenshot6.jpg" alt="Device Password Management Screenshot 4">
+            <p>User can update details if require</p>
+        </div>
+    <br>
+        <div class="screenshot-card">
+            <img src="assets/screenshots/Screenshot7.jpg" alt="Device Password Management Screenshot 4">
+            <p>Project manager can see the changes</p>
+        </div>
+    <br>
+    </div>
+
+    <h2>License</h2>
+    <p>LGPL-3 License: <a href="https://www.gnu.org/licenses/lgpl-3.0.html" target="_blank">https://www.gnu.org/licenses/lgpl-3.0.html</a></p>
+
+    <h2>Author & Support</h2>
+    <p>
+        Author: Alireza Riazi (AR)<br>
+        Email: <a href="mailto:alir.riazi@gmail.com">alir.riazi@gmail.com</a><br>
+        <!-- Website: <a href="#">TO DO: Add website</a> -->
+    </p>
+
+</div>
+
+</body>
+</html>
