@@ -10,7 +10,10 @@
                             type="object"
                             class="oe_stat_button"
                             icon="fa-file-text-o"
-                            invisible="not can_see_password_button or task_status_button or password_record_count==0" >
+                            attrs="{'invisible': ['|', '|', ('can_see_password_button', '=', False),
+                                          ('task_status_button', '=', True),
+                                          ('password_record_count', '=', 0)]}"
+                    >
                         <div class="o_field_widget o_stat_info">
                             <span class="o_stat_text">Passwords</span>
                             <field name="password_record_count" />

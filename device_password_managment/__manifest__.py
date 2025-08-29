@@ -21,7 +21,7 @@
 ################################################################################
 {
     'name': "Device Password Management",
-    'version': '17.0.0.1',
+    'version': '16.0.0.1',
     'summary': "Project Manager can Create Password list for Customer and give View access to Project Users",
     'description': """
         This module is designed for service companies to efficiently manage customer devices and their access credentials.  

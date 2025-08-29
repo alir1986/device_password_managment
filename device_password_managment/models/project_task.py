@@ -38,7 +38,7 @@ class ProjectTask(models.Model):
     )
 
 
-    @api.depends('state')
+    @api.depends('is_closed')
     def _compute_task_status_button(self):
         for rec in self:
             if rec.partner_id:
@@ -47,7 +47,7 @@ class ProjectTask(models.Model):
                 ])
             else:
                 rec.password_record_count = 0
-            if rec.state == "1_done" or rec.state == "1_canceled":
+            if rec.is_closed:
                 rec.task_status_button = True
             else:
                 rec.task_status_button = False
