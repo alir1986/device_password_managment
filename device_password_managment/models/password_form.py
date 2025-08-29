@@ -34,7 +34,7 @@ class PasswordForm(models.Model):
     active = fields.Boolean(default=True, Tracking=True)
     device_password_ids=fields.One2many('device.list.lines','password_form_id',  string='Password Lines')
     
-
+ 
     @api.onchange('partner_id')
     def password_availability(self):
         password_record = self.env['password.form'].with_context(active_test=False).search([('partner_id', '=', self.partner_id.id)])
@@ -55,27 +55,14 @@ class DeviceListLines(models.Model):
     ip_name = fields.Char(string="IP",tracking=True)
     password_name = fields.Char(string="Password", tracking=True)
     description = fields.Text(string="Description")
-    password_form_id=fields.Many2one('password.form', string='Password Form Id')
+    password_form_id=fields.Many2one('password.form', string='Password Form Id', required=True)
     partner_id = fields.Many2one(
         'res.partner',
         string="Customer",
         related='password_form_id.partner_id',
         store=True,
         readonly=True
-    )
-    
-    # @api.constrains('ip_name')
-    # def _check_valid_ip(self):
-    #     ip_pattern = r'^\d{1,3}(\.\d{1,3}){3}$'
-    #     for record in self:
-    #         if record.ip_name and not re.match(ip_pattern, record.ip_name):
-    #             raise ValidationError("Please enter a valid IPv4 address (e.g. 192.168.1.1).")
-    #         if record.ip_name:
-    #             parts = record.ip_name.split(".")
-    #             for part in parts:
-    #                 if int(part) < 0 or int(part) > 255:
-    #                     raise ValidationError("Each part of IP must be between 0 and 255.")
-    
+    )    
     @api.constrains('ip_name')
     def _check_valid_ip(self):
         cidr_pattern = r'^(\d{1,3}\.){3}\d{1,3}/([0-9]|[1-2][0-9]|3[0-2])$'

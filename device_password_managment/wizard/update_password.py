@@ -37,15 +37,12 @@ class UpdatePasswordWizard(models.TransientModel):
         res['acitve_id']= self.env.context.get('active_id')
         res["customer_name"]= self.env.context.get('customer_name')
         password_record = self.env['device.list.lines'].with_context(active_test=False).search([('id', '=', res['acitve_id'])], limit=1)
-        # raise ValidationError(_(password_record.device_id.name))
         res.update({
-                    # 'device_id': password_record.device_id.name,
                     'user_name': password_record.user_name,
                     'name': password_record.name,
                     'ip_name': password_record.ip_name,
                     'password_name': password_record.password_name,
                     'description': password_record.description,
-                    # 'password_form_id': password_record.id,
                 })
         return res
     
@@ -65,7 +62,6 @@ class UpdatePasswordWizard(models.TransientModel):
         record = self.env['device.list.lines'].with_context(active_test=False).search(
             [('id', '=', self.acitve_id)], limit=1 )
 
-        # raise ValidationError(_("Record Found: ID=%s") % (record))
         record.write({
             'user_name': self.user_name,
             'name': self.name,

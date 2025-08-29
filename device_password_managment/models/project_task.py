@@ -66,7 +66,7 @@ class ProjectTask(models.Model):
             'type': 'ir.actions.act_window',
             'name': 'Device Password Lines',
             'res_model': 'device.list.lines',
-            'view_mode': 'tree',  
+            'view_mode': 'list',  
             'target': 'current',
             'domain': [('partner_id', '=', self.partner_id.id)]
         	}
