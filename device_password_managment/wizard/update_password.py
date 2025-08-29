@@ -65,7 +65,6 @@ class UpdatePasswordWizard(models.TransientModel):
         record = self.env['device.list.lines'].with_context(active_test=False).search(
             [('id', '=', self.acitve_id)], limit=1 )
 
-        # raise ValidationError(_("Record Found: ID=%s") % (record))
         record.write({
             'user_name': self.user_name,
             'name': self.name,
