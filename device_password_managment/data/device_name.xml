@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="device_main_modem" model="device.list">
+            <field name="name">Main Modem</field>
+        </record>
+        <record id="device_switch" model="device.list">
+            <field name="name">Switch</field>
+        </record>
+        <record id="device_firewall" model="device.list">
+            <field name="name">Firewall</field>
+        </record>
+        <record id="device_server" model="device.list">
+            <field name="name">Server</field>
+        </record>
+        <record id="device_ap" model="device.list">
+            <field name="name">Access Point (AP)</field>
+        </record>
+        <record id="device_voip" model="device.list">
+            <field name="name">VoIP Phone</field>
+        </record>
+        <record id="device_pbx" model="device.list">
+            <field name="name">PBX</field>
+        </record>
+        <record id="device_nprinter" model="device.list">
+            <field name="name">Network Printer</field>
+        </record>
+        <record id="device_camera" model="device.list">
+            <field name="name">IP Camera</field>
+        </record>
+        <record id="device_nvr" model="device.list">
+            <field name="name">NVR (Network Video Recorder)</field>
+        </record>
+        <record id="device_nas" model="device.list">
+            <field name="name">NAS (Network Attached Storage)</field>
+        </record>
+        <record id="device_pc" model="device.list">
+            <field name="name">PC / Laptop</field>
+        </record>
+        <record id="device_ups" model="device.list">
+            <field name="name">UPS</field>
+        </record>
+        <record id="device_acp" model="device.list">
+            <field name="name">Access Control Panel</field>
+        </record>
+
+</odoo>
